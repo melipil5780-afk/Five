@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wild Reconnection | Experiential Nature Retreat</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Spectral:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --forest-deep: #1A2F23;
+            --ember-glow: #C0572D;
+            --river-stone: #767168;
+            --raw-linen: #F4F1EA;
+            --charcoal: #2D2D2D;
+        }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--raw-linen);
+            color: var(--charcoal);
+            line-height: 1.8;
+            /* Subtle organic texture overlay using CSS gradients */
+            background-image: 
+                radial-gradient(circle at 100% 50%, transparent 20%, rgba(26, 47, 35, 0.03) 21%, rgba(26, 47, 35, 0.03) 34%, transparent 35%, transparent),
+                radial-gradient(circle at 0% 50%, transparent 20%, rgba(26, 47, 35, 0.03) 21%, rgba(26, 47, 35, 0.03) 34%, transparent 35%, transparent);
+            background-size: 100px 100px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Spectral', serif;
+            font-weight: 600;
+            color: var(--forest-deep);
+        }
+
+        /* Decorative Divider used throughout */
+        .divider-compass {
+            text-align: center;
+            margin: 3rem 0;
+            color: var(--ember-glow);
+            font-size: 1.5rem;
+            opacity: 0.7;
+        }
+        .divider-compass::after { content: "⟁"; /* Alchemical symbol for earth/fire */ }
+
+        /* --- HERO SECTION: Immersion --- */
+        header {
+            /* A deep, moody gradient resembling a forest at dusk + firelight */
+            background: linear-gradient(to bottom, rgba(26, 47, 35, 0.9), rgba(26, 47, 35, 0.8)),
+                        radial-gradient(circle at bottom center, var(--ember-glow) 0%, var(--forest-deep) 70%);
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            color: var(--raw-linen);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle "topography line" effect in hero background */
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: repeating-radial-gradient(circle at 50% 100%, transparent 0, transparent 20px, rgba(255,255,255,0.05) 20px, rgba(255,255,255,0.05) 21px);
+            pointer-events: none;
+        }
+
+        header h1 {
+            color: var(--raw-linen);
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        header p.subhead {
+            font-family: 'Spectral', serif;
+            font-style: italic;
+            font-size: 1.5rem;
+            max-width: 700px;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .btn-ember {
+            background-color: var(--ember-glow);
+            color: var(--raw-linen);
+            padding: 1.2rem 3rem;
+            text-decoration: none;
+            font-family: 'Spectral', serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--ember-glow);
+            display: inline-block;
+        }
+
+        .btn-ember:hover {
+            background-color: transparent;
+            color: var(--ember-glow);
+        }
+
+        /* --- SECTION 1: The Call (Manifesto) --- */
+        .manifesto {
+            max-width: 800px;
+            margin: 6rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .manifesto h2 { font-size: 2.5rem; margin-bottom: 2rem; }
+        .manifesto p { font-size: 1.2rem; color: var(--river-stone); }
+        
+        .drop-cap {
+            float: left;
+            font-family: 'Spectral', serif;
+            font-size: 5rem;
+            line-height: 0.8;
+            margin-right: 1rem;
+            color: var(--ember-glow);
+        }
+
+        /* --- SECTION 2: The Experience (Grid) --- */
+        .experience-section {
+            background: var(--forest-deep);
+            color: var(--raw-linen);
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .experience-section h2, .experience-section h3 { color: var(--raw-linen); }
+
+        .grid-container {
+            max-width: 1100px;
+            margin: 4rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .element-card {
+            background: rgba(255,255,255,0.05); /* Subtle translucent card */
+            padding: 2.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .element-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--ember-glow);
+        }
+
+        /* CSS-only icons for the cards */
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 1.5rem;
+            background: var(--ember-glow);
+            /* Creating organic shapes using border-radius */
+        }
+        .icon-breath { border-radius: 50% 50% 0 50%; transform: rotate(-45deg); }
+        .icon-shadow { background: #0a0a0a; border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+        .icon-wild { background: var(--river-stone); clip-path: polygon(50% 0%, 0% 100%, 100% 100%); }
+
+        .element-card h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .element-card p { opacity: 0.8; font-size: 1rem; }
+
+        /* --- SECTION 3: The Tribe (Atmosphere) --- */
+        .tribe-section {
+            max-width: 900px;
+            margin: 6rem auto;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .quote-box {
+            font-family: 'Spectral', serif;
+            font-size: 1.8rem;
+            font-style: italic;
+            color: var(--forest-deep);
+            padding: 3rem;
+            border-top: 2px solid var(--ember-glow);
+            border-bottom: 2px solid var(--ember-glow);
+            margin: 4rem 0;
+        }
+
+        /* --- FOOTER / LOGISTICS --- */
+        footer {
+            background: var(--charcoal);
+            color: var(--river-stone);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        footer h2 { color: var(--raw-linen); font-size: 3rem; }
+        
+        .logistics-box {
+            border: 1px solid var(--river-stone);
+            display: inline-block;
+            padding: 2rem 3rem;
+            margin: 2rem 0 3rem;
+            text-align: left;
+        }
+
+        .logistics-box strong { color: var(--ember-glow); display: block; margin-bottom: 0.5rem; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Return to the Wild Self.</h1>
+        <p class="subhead">An experiential weekend of breath, shadow, and primal connection.</p>
+        <a href="#apply" class="btn-ember">View Upcoming Retreats</a>
+    </header>
+
+    <main>
+        <section class="manifesto">
+            <div class="divider-compass"></div>
+            <h2>The Call of the Deep</h2>
+            <p>
+                <span class="drop-cap">W</span>e live domesticated lives, disconnected from the rhythms of nature and the depths of our own souls. We feel the ache of something missing—a wildness that has been silenced by routine. This retreat is an invitation to leave the noise behind and step into the crucible of the forest. It is not a vacation; it is a remembering.
+            </p>
+        </section>
+
+        <section class="experience-section">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h2>The Immersion</h2>
+                <p style="font-size: 1.2rem; opacity: 0.9;">We combine ancient practices with modern experiential therapy to strip away the masks and reveal the authentic core.</p>
+            </div>
+
+            <div class="grid-container">
+                <div class="element-card">
+                    <div class="card-icon icon-breath"></div>
+                    <h3>Somatic Breathwork</h3>
+                    <p>Using powerful, rhythmic breathing techniques to bypass the analytical mind, release trapped trauma in the body, and access altered states of clarity.</p>
+                </div>
+                <div class="element-card">
+                    <div class="card-icon icon-shadow"></div>
+                    <h3>Shadow Work Circle</h3>
+                    <p>Guided group processes in the safety of night to confront the rejected parts of ourselves. We do not banish the dark; we integrate it into wholeness.</p>
+                </div>
+                <div class="element-card">
+                    <div class="card-icon icon-wild"></div>
+                    <h3>Ancestral Skills</h3>
+                    <p>Reconnecting with primal capability through fire-making, shelter awareness, and solitude sit-spots. Finding safety in your own competence.</p>
+                </div>
+                 <div class="element-card">
+                    <div class="card-icon" style="background: var(--ember-glow); border-radius: 50%;"></div>
+                    <h3>Authentic Relating</h3>
+                    <p>Moving beyond polite conversation into "circling" and exercises designed to foster intense, present-moment connection and truth-telling.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="tribe-section">
+            <div class="divider-compass"></div>
+            <h2>The Container</h2>
+            <p>This is intense work that requires a container of absolute safety. We build a temporary tribe rooted in confidentiality, non-judgment, and the shared commitment to going deep. You will be seen, heard, and held by both the group and the land itself.</p>
+            
+            <div class="quote-box">
+                "The wilderness holds up a mirror that civilization has forgotten how to craft. Come look."
+            </div>
+        </section>
+    </main>
+
+    <footer id="apply">
+        <h2>Answer the Call</h2>
+        <p>Space is strictly limited to 12 participants to ensure depth.</p>
+        
+        <div class="logistics-box">
+            <p><strong>Next Gathering:</strong> October 14-17, The Catskill Mountains, NY</p>
+            <p><strong>Exchange:</strong> $1,450 (All-inclusive lodging & organic meals)</p>
+            <p><strong>Prerequisite:</strong> A screening call to ensure readiness for deep work.</p>
+        </div>
+        <br>
+        <a href="#" class="btn-ember" style="font-size: 1.5rem; padding: 1.5rem 4rem;">Begin Application</a>
+        
+        <p style="margin-top: 5rem; font-size: 0.9rem; opacity: 0.5;">© 2025 WILD RECONNECTION RETREATS. ESTABLISHED IN NATURE.</p>
+    </footer>
+
+</body>
+</html>
